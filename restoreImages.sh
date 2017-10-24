@@ -2,12 +2,13 @@
 
 host="http://localhost"
 
-images=`ls images/ | grep -E "[0-9]+.jpg"`
-
-for image in $images
+# Add image files waiting in ./images
+imageId=25
+for image in ./images/*.jpg
 do
-	imageId=`echo "$image" | cut -d'.' -f1`
 	echo "adding image \"$image\" to local server $host, imageId=$imageId"
 	curl -X PUT --data-binary @"$image" $host:4212/index/images/$imageId
+	
+	imageId=$((imageId+1))
 done
 

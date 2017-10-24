@@ -27,8 +27,8 @@ cd "$targetDir"
 installIfNotFound cmake
 
 # Install Pastec compilation dependencies
-echo "Please install libopencv-dev libmicrohttpd-dev libjsoncpp-dev?"
-sudo apt-get install libopencv-dev libmicrohttpd-dev libjsoncpp-dev
+echo "Please install build-essential libopencv-dev libmicrohttpd-dev libjsoncpp-dev?"
+sudo apt-get install build-essential libopencv-dev libmicrohttpd-dev libjsoncpp-dev
 mkdir -p build
 cd build
 cmake ../
